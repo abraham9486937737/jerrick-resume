@@ -131,3 +131,4 @@ B.E. Electronics and Communication Engineering Student
 Dr. N.G.P Institute of Technology
 
 Portfolio: https://jerrickprinceabraham.github.io/jerrick-portfolio/
+LinkedIn: https://www.linkedin.com/in/jerrick-prince-abraham/
