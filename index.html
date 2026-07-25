@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic document setup and metadata for browser rendering and accessibility -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Online resume of Jerrick Prince Abraham, B.E. Electronics and Communication Engineering student." />
+  <title>Jerrick Prince Abraham | Resume</title>
+  <!-- External stylesheet for all visual design (Step 3) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!--
+    Header section:
+    The <header> contains top-level content like site title and navigation.
+    This improves structure and accessibility for screen readers.
+  -->
+  <header class="site-header" id="top">
+    <div class="container">
+      <h1 class="site-title">Jerrick Prince Abraham</h1>
+      <p class="site-subtitle">B.E. Electronics and Communication Engineering Student</p>
+
+      <!--
+        Navigation section:
+        <nav> is used for important page links.
+        Each link points to a section ID for in-page navigation.
+      -->
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="#summary">Summary</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#learning">Learning</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="#languages">Languages</a></li>
+          <li><a href="#interests">Interests</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!--
+    Main content wrapper:
+    <main> holds the core content of the page and should be unique per document.
+    This is useful for semantic clarity and accessibility tools.
+  -->
+  <main class="resume-main">
+    <!--
+      Hero / Resume Header section:
+      Introduces the candidate with profile image, core details, and quick actions.
+    -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-layout">
+        <img
+          src="assets/images/jerrick-profile.jpg"
+          alt="Profile photo of Jerrick Prince Abraham"
+          class="profile-image"
+        />
+
+        <div class="hero-content">
+          <h2 id="hero-title">Resume</h2>
+          <p><strong>Name:</strong> Jerrick Prince Abraham</p>
+          <p><strong>Title:</strong> B.E. Electronics and Communication Engineering Student</p>
+          <p><strong>College:</strong> Dr. N.G.P Institute of Technology</p>
+          <p><strong>Location:</strong> Coimbatore, Tamil Nadu, India</p>
+
+          <!--
+            Placeholder Download Resume button:
+            The button type is "button" so it does not submit anything by default.
+            JavaScript placeholder behavior will be added in Step 4/5.
+          -->
+          <button type="button" id="download-resume-btn">Download Resume</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Summary section -->
+    <section id="summary" class="resume-section" aria-labelledby="summary-title">
+      <div class="container">
+        <h2 id="summary-title">Professional Summary</h2>
+        <p>
+          Passionate first-year Electronics and Communication Engineering student with a strong
+          interest in technology, programming, and continuous learning. I enjoy building practical
+          projects, exploring software development, and improving my technical and communication
+          skills. I am committed to learning modern technologies and contributing to innovative
+          engineering solutions while continuously growing both personally and professionally.
+        </p>
+      </div>
+    </section>
+
+    <!-- Education section -->
+    <section id="education" class="resume-section" aria-labelledby="education-title">
+      <div class="container">
+        <h2 id="education-title">Education</h2>
+
+        <!-- Using article blocks for each education entry keeps content modular and clear -->
+        <article class="card">
+          <h3>Dr. N.G.P Institute of Technology</h3>
+          <p>Bachelor of Engineering (B.E.)</p>
+          <p>Electronics and Communication Engineering</p>
+          <p>2026 - Present</p>
+        </article>
+
+        <article class="card">
+          <h3>Higher Secondary Education</h3>
+          <p>Computer Science Group</p>
+          <p>560 / 600 Marks</p>
+        </article>
+
+        <article class="card">
+          <h3>SSLC</h3>
+          <p>472 / 500 Marks</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Academic Achievements section -->
+    <section id="achievements" class="resume-section" aria-labelledby="achievements-title">
+      <div class="container">
+        <h2 id="achievements-title">Academic Achievements</h2>
+        <ul>
+          <li>560 / 600 in Higher Secondary Education</li>
+          <li>472 / 500 in SSLC</li>
+          <li>Merit Admission in Engineering</li>
+          <li>School Pupil Leader</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Technical Skills section -->
+    <section id="skills" class="resume-section" aria-labelledby="skills-title">
+      <div class="container">
+        <h2 id="skills-title">Technical Skills</h2>
+        <ul class="tag-list">
+          <li>HTML5</li>
+          <li>CSS3</li>
+          <li>JavaScript</li>
+          <li>Git</li>
+          <li>GitHub</li>
+          <li>VS Code</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Current Learning section -->
+    <section id="learning" class="resume-section" aria-labelledby="learning-title">
+      <div class="container">
+        <h2 id="learning-title">Current Learning</h2>
+        <ul class="tag-list">
+          <li>Python</li>
+          <li>C Programming</li>
+          <li>Problem Solving</li>
+          <li>Web Development</li>
+          <li>German Language</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects section -->
+    <section id="projects" class="resume-section" aria-labelledby="projects-title">
+      <div class="container">
+        <h2 id="projects-title">Projects</h2>
+
+        <article class="card">
+          <h3>Personal Portfolio Website</h3>
+          <p>
+            Developed a responsive personal portfolio website using HTML, CSS and JavaScript.
+          </p>
+
+          <h4>Features</h4>
+          <ul>
+            <li>Responsive Design</li>
+            <li>About Me</li>
+            <li>Education</li>
+            <li>Skills</li>
+            <li>Contact Information</li>
+            <li>GitHub Pages Deployment</li>
+          </ul>
+
+          <p>
+            <strong>Portfolio Link:</strong>
+            <a href="https://jerrickprinceabraham.github.io/jerrick-portfolio/" target="_blank" rel="noopener noreferrer">
+              Visit Portfolio
+            </a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Leadership & Activities section -->
+    <section id="leadership" class="resume-section" aria-labelledby="leadership-title">
+      <div class="container">
+        <h2 id="leadership-title">Leadership &amp; Activities</h2>
+        <ul>
+          <li>School Pupil Leader</li>
+          <li>Choir Member</li>
+          <li>Running</li>
+          <li>Team Activities</li>
+          <li>Public Speaking</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Languages section -->
+    <section id="languages" class="resume-section" aria-labelledby="languages-title">
+      <div class="container">
+        <h2 id="languages-title">Languages</h2>
+        <ul>
+          <li>English</li>
+          <li>Tamil</li>
+          <li>Learning German</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Interests section -->
+    <section id="interests" class="resume-section" aria-labelledby="interests-title">
+      <div class="container">
+        <h2 id="interests-title">Interests</h2>
+        <ul>
+          <li>Electronics</li>
+          <li>Programming</li>
+          <li>Chess</li>
+          <li>Running</li>
+          <li>Technology</li>
+          <li>Artificial Intelligence</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact Information section -->
+    <section id="contact" class="resume-section" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title">Contact Information</h2>
+        <p><strong>Email:</strong> <a href="mailto:jerrickprinceabraham@gmail.com">jerrickprinceabraham@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+919488974737">+91 94889 74737</a></p>
+        <p><strong>Location:</strong> Coimbatore, Tamil Nadu, India</p>
+        <p>
+          <strong>GitHub:</strong>
+          <a href="https://github.com/jerrickprinceabraham" target="_blank" rel="noopener noreferrer">
+            github.com/jerrickprinceabraham
+          </a>
+        </p>
+        <p>
+          <strong>Portfolio:</strong>
+          <a href="https://jerrickprinceabraham.github.io/jerrick-portfolio/" target="_blank" rel="noopener noreferrer">
+            jerrickprinceabraham.github.io/jerrick-portfolio
+          </a>
+        </p>
+        <p>
+          <strong>LinkedIn:</strong>
+          <a href="https://www.linkedin.com/in/your-linkedin-username" target="_blank" rel="noopener noreferrer">
+            LinkedIn Profile (Placeholder)
+          </a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!--
+    Footer section:
+    Contains end-of-page information.
+    The year text is ready for dynamic update via JavaScript.
+  -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="current-year">2026</span> Jerrick Prince Abraham. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- External JavaScript file for interactive behavior (Step 4) -->
+  <script src="script.js"></script>
+</body>
+</html>

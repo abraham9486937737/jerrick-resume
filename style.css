@@ -1,0 +1,611 @@
+/*
+  ==========================================================
+  JERRICK RESUME WEBSITE - STYLE SHEET (STEP 3)
+  ==========================================================
+  This file contains complete styling for a professional,
+  beginner-friendly online resume website.
+
+  Design focus:
+  - Clean and modern
+  - ATS-friendly and readable
+  - Fully responsive
+  - Print-friendly
+*/
+
+/*
+  ----------------------------------------------------------
+  1) CSS VARIABLES (COLOR THEME + COMMON VALUES)
+  ----------------------------------------------------------
+  Why this section:
+  Variables make color and spacing management easier.
+  Change values here once, and the design updates everywhere.
+*/
+:root {
+  --color-primary: #0f172a;    /* Navy blue */
+  --color-secondary: #1e293b;  /* Dark slate */
+  --color-background: #f8fafc; /* Light background */
+  --color-card: #ffffff;       /* White cards */
+  --color-accent: #2563eb;     /* Action/interactive color */
+  --color-text: #334155;       /* Main body text */
+  --color-border: #dbe3ee;
+
+  --shadow-soft: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --radius-md: 12px;
+  --radius-pill: 999px;
+
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  --max-width: 1100px;
+}
+
+/*
+  ----------------------------------------------------------
+  2) BASE RESET + GLOBAL ELEMENT STYLES
+  ----------------------------------------------------------
+  Why this section:
+  A small reset removes default browser inconsistencies.
+  Global styles keep text readable and spacing consistent.
+*/
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.65;
+  background: var(--color-background);
+  color: var(--color-text);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin-top: 0;
+  color: var(--color-primary);
+  line-height: 1.25;
+}
+
+p {
+  margin-top: 0;
+}
+
+ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.container {
+  width: min(92%, var(--max-width));
+  margin: 0 auto;
+}
+
+/*
+  ----------------------------------------------------------
+  3) HEADER + STICKY NAVIGATION
+  ----------------------------------------------------------
+  Why this section:
+  Gives a strong first impression and keeps navigation visible
+  while scrolling for better user experience.
+*/
+.site-header {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: #ffffff;
+  padding-top: var(--space-xl);
+}
+
+.site-title {
+  margin-bottom: 0.25rem;
+  color: #ffffff;
+  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+}
+
+.site-subtitle {
+  margin-bottom: var(--space-lg);
+  color: #dbe7ff;
+}
+
+.main-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.main-nav a {
+  color: #e6edf8;
+  padding: 0.45rem 0.8rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.92rem;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  background: #ffffff;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/*
+  ----------------------------------------------------------
+  4) MAIN LAYOUT + SHARED SECTION STYLING
+  ----------------------------------------------------------
+  Why this section:
+  Applies consistent spacing and visual rhythm between sections.
+*/
+.resume-main {
+  padding: var(--space-2xl) 0;
+}
+
+.resume-section {
+  margin-bottom: var(--space-2xl);
+}
+
+.resume-section h2 {
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  margin-bottom: var(--space-md);
+  padding-bottom: 0.45rem;
+  border-bottom: 2px solid var(--color-border);
+}
+
+/*
+  ----------------------------------------------------------
+  5) HERO / RESUME HEADER (TWO-COLUMN GRID)
+  ----------------------------------------------------------
+  Why this section:
+  Shows image and key details side by side on larger screens,
+  and stacks cleanly on smaller devices.
+*/
+.hero {
+  margin-bottom: var(--space-2xl);
+}
+
+.hero-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-xl);
+}
+
+/*
+  Profile image styling:
+  - Circular shape
+  - Professional shadow
+  - Smooth hover effect
+*/
+.profile-image {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.2);
+  justify-self: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.profile-image:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 18px 34px rgba(15, 23, 42, 0.26);
+}
+
+.hero-content p {
+  margin-bottom: 0.45rem;
+}
+
+/*
+  ----------------------------------------------------------
+  6) BUTTONS (DOWNLOAD / PORTFOLIO / GITHUB)
+  ----------------------------------------------------------
+  Why this section:
+  Creates consistent interactive buttons with smooth transitions.
+  The same style is shared by button and action links.
+*/
+#download-resume-btn,
+#projects .card a,
+#contact a {
+  display: inline-block;
+  border-radius: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+#download-resume-btn {
+  margin-top: var(--space-md);
+  border: none;
+  cursor: pointer;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.2rem;
+}
+
+#download-resume-btn:hover,
+#download-resume-btn:focus-visible {
+  background: #1e4fba;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.28);
+}
+
+/*
+  ----------------------------------------------------------
+  7) CARDS + TIMELINE + GRID BLOCKS
+  ----------------------------------------------------------
+  Why this section:
+  Converts lists and content blocks into clean resume components.
+*/
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+/*
+  Education timeline:
+  Each education card gets a vertical line and marker.
+*/
+#education .container {
+  position: relative;
+}
+
+#education .card {
+  position: relative;
+  margin-left: 1rem;
+  border-left: 4px solid var(--color-accent);
+}
+
+#education .card::before {
+  content: "";
+  position: absolute;
+  left: -11px;
+  top: 1.25rem;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 3px #e8f0ff;
+}
+
+/*
+  Achievement cards:
+  Turn bullet points into responsive card-like tiles.
+*/
+#achievements ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+}
+
+#achievements li {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-accent);
+  border-radius: 10px;
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-md);
+}
+
+/*
+  Skill tags and current learning tags:
+  Flexible chips that wrap on smaller screens.
+*/
+.tag-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.tag-list li {
+  background: #eaf1ff;
+  color: #12346f;
+  border: 1px solid #cadcff;
+  border-radius: var(--radius-pill);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.93rem;
+  font-weight: 600;
+}
+
+/*
+  Project card link styling for call-to-action clarity.
+*/
+#projects .card a {
+  margin-top: var(--space-xs);
+  background: var(--color-secondary);
+  color: #ffffff;
+  padding: 0.55rem 0.9rem;
+}
+
+#projects .card a:hover,
+#projects .card a:focus-visible {
+  background: var(--color-accent);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+/*
+  Contact cards:
+  Each line inside contact section appears like a small card.
+*/
+#contact {
+  margin-bottom: 0;
+}
+
+#contact .container {
+  display: grid;
+  gap: 0.7rem;
+}
+
+#contact .container > p {
+  margin: 0;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 0.8rem 0.9rem;
+}
+
+#contact a:hover {
+  text-decoration: none;
+  color: #1b4ec2;
+}
+
+/*
+  ----------------------------------------------------------
+  8) OTHER LISTS (LEADERSHIP, LANGUAGES, INTERESTS)
+  ----------------------------------------------------------
+  Why this section:
+  Improves readability of plain list sections by adding spacing.
+*/
+#leadership ul,
+#languages ul,
+#interests ul {
+  display: grid;
+  gap: 0.45rem;
+}
+
+/*
+  ----------------------------------------------------------
+  9) FOOTER
+  ----------------------------------------------------------
+  Why this section:
+  Creates a clear and professional ending for the resume page.
+*/
+.site-footer {
+  background: var(--color-primary);
+  color: #e7edf9;
+  margin-top: var(--space-2xl);
+}
+
+.site-footer .container {
+  padding: 1.2rem 0;
+}
+
+.site-footer p {
+  margin: 0;
+  text-align: center;
+  font-size: 0.92rem;
+}
+
+/*
+  ----------------------------------------------------------
+  10) SCROLL ANIMATION CLASSES (FOR JAVASCRIPT)
+  ----------------------------------------------------------
+  Why this section:
+  JavaScript can add "active" class to fade sections in smoothly.
+*/
+.fade-in {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*
+  ----------------------------------------------------------
+  11) RESPONSIVE DESIGN - BREAKPOINTS
+  ----------------------------------------------------------
+  Why this section:
+  Keeps the site readable and usable on all screen sizes.
+*/
+
+/* Laptop and smaller desktops: 992px and below */
+@media (max-width: 992px) {
+  .hero-layout {
+    grid-template-columns: 220px 1fr;
+    gap: var(--space-lg);
+  }
+
+  #achievements ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet: 768px and below */
+@media (max-width: 768px) {
+  .site-header {
+    padding-top: var(--space-lg);
+  }
+
+  .main-nav ul {
+    gap: 0.35rem;
+  }
+
+  .main-nav a {
+    font-size: 0.86rem;
+    padding: 0.4rem 0.68rem;
+  }
+
+  .hero-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .profile-image {
+    max-width: 180px;
+  }
+
+  .resume-main {
+    padding-top: var(--space-xl);
+  }
+
+  .resume-section {
+    margin-bottom: var(--space-xl);
+  }
+
+  #education .card {
+    margin-left: 0;
+  }
+}
+
+/* Mobile: below 576px */
+@media (max-width: 575px) {
+  .container {
+    width: min(94%, var(--max-width));
+  }
+
+  .site-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-layout {
+    padding: var(--space-lg);
+  }
+
+  .card {
+    padding: var(--space-md);
+  }
+
+  #download-resume-btn {
+    width: 100%;
+  }
+}
+
+/*
+  ----------------------------------------------------------
+  12) PRINT-FRIENDLY STYLES
+  ----------------------------------------------------------
+  Why this section:
+  Ensures clean resume printing and future PDF export support.
+  We remove interactive/UI-only elements and tighten spacing.
+*/
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  body {
+    background: #ffffff;
+    color: #111111;
+    font-size: 11.5pt;
+    line-height: 1.4;
+  }
+
+  .site-header {
+    background: #ffffff;
+    color: #111111;
+    padding-top: 0;
+  }
+
+  .site-title,
+  .site-subtitle,
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: #111111;
+  }
+
+  /* Hide navigation and interactive buttons while printing */
+  .main-nav,
+  #download-resume-btn {
+    display: none !important;
+  }
+
+  /* Hide footer links as requested */
+  .site-footer a {
+    display: none !important;
+  }
+
+  .resume-main {
+    padding: 0;
+  }
+
+  .resume-section {
+    margin-bottom: 1rem;
+    break-inside: avoid;
+  }
+
+  .hero-layout,
+  .card,
+  #achievements li,
+  #contact .container > p {
+    box-shadow: none;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+  }
+
+  a {
+    color: #111111;
+    text-decoration: none;
+  }
+
+  .site-footer {
+    margin-top: 0.8rem;
+    background: #ffffff;
+    color: #111111;
+    border-top: 1px solid #dddddd;
+  }
+}
